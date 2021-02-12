@@ -94,7 +94,11 @@ class AtomTokenParser extends AbstractTokenParser
 
 			$stream->expect(Token::PUNCTUATION_TYPE, ':');
 			$stream->nextIf(Token::PUNCTUATION_TYPE, '[');
-			$stream->expect(Token::NAME_TYPE, $strHandle);
+			foreach (preg_split('/(-)/', $strHandle, -1, PREG_SPLIT_DELIM_CAPTURE) as $word)
+			{
+				if ($word === '-') $stream->expect(Token::OPERATOR_TYPE, $word);
+				else $stream->expect(Token::NAME_TYPE, $word);
+			}
 			$stream->nextIf(Token::PUNCTUATION_TYPE, ']');
 		}
 
