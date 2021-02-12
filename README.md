@@ -1,6 +1,8 @@
 # Atom
 Adding enhanced modularity to Craft CMS Twig templating
 
+![Atom](./resources/banner.png)
+
 ## Installation
 
 ```shell
