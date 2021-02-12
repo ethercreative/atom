@@ -1,0 +1,31 @@
+{
+  "name": "ether/atom",
+  "description": "Adding enhanced modularity to Craft CMS Twig templating",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "craftcms/cms": "^3.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ether\\atom\\": "src/"
+    }
+  },
+  "support": {
+    "email": "help@ethercreative.co.uk",
+    "docs": "https://docs.ethercreative.co.uk/atom",
+    "source": "https://github.com/ethercreative/atom",
+    "issues": "https://github.com/ethercreative/atom/issues"
+  },
+  "extra": {
+    "handle": "atom",
+    "name": "Atom",
+    "developer": "Ether Creative",
+    "developerUrl": "https://ethercreative.co.uk",
+
+    "class": "ether\\atom\\Atom",
+    "schemaVersion": "1.0.0"
+  }
+}
