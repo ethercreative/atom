@@ -194,7 +194,7 @@ class AtomTokenParser extends AbstractTokenParser
 
 					// If we don't have a matching opener, that means
 					// this closing tag is ours.
-					return ($i === false && $endName === $handle) || !empty($openers);
+					return ($i === false && $endName === $handle);
 				}
 			}
 		}
