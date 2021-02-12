@@ -28,8 +28,8 @@ doesn't exist then nothing will be output.
 ### Parameters
 
 You can pass parameters to your atom which will be exposed within the atom. The
-current template context is NOT passed to the atom, so any global variables will
-have to be passed manually.
+current template context is NOT passed to the atom, so any variables defined 
+outside will have to be passed manually.
 
 ```twig
 {% x:my-atom { heading: "Hello world!" } %}
