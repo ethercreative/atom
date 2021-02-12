@@ -21,7 +21,7 @@ modules, components, molecules). You can access the atoms in twig using the
 following syntax:
 
 ```twig
-{% x:my-atom %}
+{% x:my-atom %}{% endx %}
 ```
 
 The above will include `_atoms/my-atom` in your template. If `my-atom` 
@@ -34,7 +34,7 @@ current template context is NOT passed to the atom, so any variables defined
 outside will have to be passed manually.
 
 ```twig
-{% x:my-atom { heading: "Hello world!" } %}
+{% x:my-atom { heading: "Hello world!" } %}{% endx %}
 ```
 
 In the above example, `my-atom` will be given access to the `heading` variable.
@@ -75,7 +75,7 @@ Atoms can be nested inside other atoms!
 
 ```twig
 {% x:my-atom %}
-    {% x:another-atom %}
+    {% x:another-atom %}{% endx %}
 {% endx %}
 ```
 
@@ -86,7 +86,7 @@ you had an atom at `_atoms/cards/news`, you could access it using the following
 syntax:
 
 ```twig
-{% x:cards/news %}
+{% x:cards/news %}{% endx %}
 ```
 
 ### Dynamic Atoms
@@ -97,7 +97,7 @@ brackets:
 ```twig
 {% set myVar = 'example-atom' %}
 
-{% x:[myVar] %}
+{% x:[myVar] %}{% endx %}
 ```
 
 ## Config
