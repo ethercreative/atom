@@ -45,9 +45,9 @@ Children can also be passed to atoms:
 
 ```twig
 {% x:my-atom { heading: "Hello world!" } %}
-	<p>This is my atom</p>
-	<p>There are many like it, but this is mine</p>
-	<p>{{ myVariable }}</p>
+    <p>This is my atom</p>
+    <p>There are many like it, but this is mine</p>
+    <p>{{ myVariable }}</p>
 {% endx %}
 ```
 
@@ -62,8 +62,8 @@ defined.
 ```twig
 {# Contents of `_atoms/my-atom` #}
 <div>
-	<h1>{{ heading }}</h1>
-	{{ children }}
+    <h1>{{ heading }}</h1>
+    {{ children }}
 </div>
 ```
 
@@ -73,7 +73,7 @@ Atoms can be nested inside other atoms!
 
 ```twig
 {% x:my-atom %}
-	{% x:another-atom %}
+    {% x:another-atom %}
 {% endx %}
 ```
 
