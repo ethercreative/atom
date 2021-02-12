@@ -1,7 +1,7 @@
 {
   "name": "ether/atom",
   "description": "Adding enhanced modularity to Craft CMS Twig templating",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "craft-plugin",
   "license": "MIT",
   "minimum-stability": "dev",
