@@ -94,9 +94,9 @@ class AtomTokenParser extends AbstractTokenParser
 
 			$stream->expect(Token::PUNCTUATION_TYPE, ':');
 			$stream->nextIf(Token::PUNCTUATION_TYPE, '[');
-			foreach (preg_split('/(-)/', $strHandle, -1, PREG_SPLIT_DELIM_CAPTURE) as $word)
+			foreach (preg_split('/(-|\/)/', $strHandle, -1, PREG_SPLIT_DELIM_CAPTURE) as $word)
 			{
-				if ($word === '-') $stream->expect(Token::OPERATOR_TYPE, $word);
+				if ($word === '-' || $word === '/') $stream->expect(Token::OPERATOR_TYPE, $word);
 				else $stream->expect(Token::NAME_TYPE, $word);
 			}
 			$stream->nextIf(Token::PUNCTUATION_TYPE, ']');
@@ -130,7 +130,7 @@ class AtomTokenParser extends AbstractTokenParser
 	 */
 	public function decideBlockEnd (Token $token): bool
 	{
-		return $token->test('endx');
+		return $token->test('end' . $this->getTag());
 	}
 
 	// Helpers
