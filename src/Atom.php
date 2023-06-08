@@ -53,21 +53,25 @@ class Atom extends Plugin
 	) : void {
 		$view = Craft::$app->getView();
 
-		$template = self::$_config['atoms'] . '/' . $handle;
+		$atomPaths = self::$_config['atoms'];
+		if (!is_array($atomPaths)) $atomPaths = [$atomPaths];
 
 		$variables['children'] = new Markup($children, 'utf8');
 
-		if (!$view->doesTemplateExist($template))
+		foreach ($atomPaths as $path)
 		{
-			Craft::error(
-				"Error locating template: {$template}",
-				__METHOD__
-			);
+			$template = $path . '/' . $handle;
 
-			return;
+			if ($view->doesTemplateExist($template)) {
+				echo $view->renderTemplate($template, $variables);
+				return;
+			}
 		}
 
-		echo $view->renderTemplate($template, $variables);
+		Craft::error(
+			"Error locating template: {$handle}",
+			__METHOD__
+		);
 	}
 
 }

@@ -1,3 +1,7 @@
+## 1.0.5 - 2023-06-08
+### Changed
+- `atoms` config option now supports an array of paths
+
 ## 1.0.4 - 2020-02-15
 ### Fixed
 - Fix error when using nested atom name (`/`) in closing tag
