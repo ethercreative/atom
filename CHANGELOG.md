@@ -1,3 +1,6 @@
+## 4.0.0 - 2023-03-27
+- Craft 4 Release
+
 ## 1.0.5 - 2023-06-08
 ### Changed
 - `atoms` config option now supports an array of paths
